@@ -46,7 +46,12 @@ public class MarkedThingy implements Gradable {
                 }
             }            
         }
-        return weightsTimesMarksSum/weights;
+        if (weights != 0) {
+            return weightsTimesMarksSum/weights;
+        } else {
+            return -1;
+        }
+        
     }
 
 
