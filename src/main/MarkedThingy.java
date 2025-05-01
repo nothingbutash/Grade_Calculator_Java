@@ -23,12 +23,12 @@ public class MarkedThingy implements Gradable {
         return this.weight;
     }
         
-    public boolean setDropXLowest(double x) {
+    public boolean setDropXLowest(int x) {
         this.dropXLowest = x;
         return true;
     }
 
-    public double getDropXLowest() {
+    public int getDropXLowest() {
         return this.dropXLowest;
     }
     
@@ -52,11 +52,7 @@ public class MarkedThingy implements Gradable {
             return weightsTimesMarksSum/weights;
         } else {
             return -1;
-        }
-        
-    }
-
-
+        } 
     }
 
     public void addSubGradable(Gradable subGradable) {
