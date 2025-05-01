@@ -4,15 +4,32 @@ import java.util.ArrayList;
 public class MarkedThingy implements Gradable {
     private Collection<Gradable> subGradables;
 
-    public MarkedThingy() {
-        
-    }
-    
-    public double getMark() {
-        return 1.0;//stub
+    public MarkedThingy(int dropXLowestp) {
+        private int dropXLowest;
+        private double weight = -1;
+        private double grade = getMark();
+        private ArrayList<Gradable>() subGradables = new ArrayList<Gradable>;
     }
 
-    public void addSubGradable() {
+    public boolean setWeight(double w) {
+        this.weight = w;
+        return true;
+    }
+
+    public double getWeight() {
+        return this.weight;
+    }
+        
+    public boolean setDropXLowest(double x) {
+        this.dropXLowest = x;
+        return true;
+    }
+
+    public double getDropXLowest() {
+        return this.dropXLowest;
+    }
+
+    public void addSubGradable() {  
 
     }
 
