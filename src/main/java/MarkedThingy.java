@@ -7,6 +7,13 @@ public class MarkedThingy implements Gradable {
     private double weight;
     private double grade;
 
+    public MarkedThingy() {
+        dropXLowest = 0;
+        weight = -1;
+        grade = getMark();
+        subGradables = new ArrayList<Gradable>();
+    }
+
     public MarkedThingy(int dropXLowestp) {
         dropXLowest = dropXLowestp;
         weight = -1;
