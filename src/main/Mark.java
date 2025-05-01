@@ -1,9 +1,11 @@
 ﻿public class Mark implements Gradable {
-    public void setMark() {
-        
+    private double mark;
+    
+    public void setMark(double mark) {
+        this.mark = mark;
     }
 
     public double getMark() {
-        return 0;//stub
+        return mark;
     }
 }
