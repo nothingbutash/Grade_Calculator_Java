@@ -36,11 +36,11 @@ public class MarkedThingy implements Gradable {
         double weights = 0;
         for (Gradable subGradable : subGradables) {
             if (subGradable.getMark() >= 0) {
-                if (subGradable.getClass() == new MarkedThingy().getClass()) {
+                if (subGradable.getClass() == new MarkedThingy(0).getClass()) {
                     MarkedThingy subMarkedThingy = (MarkedThingy) subGradable;
                     weightsTimesMarksSum += (subMarkedThingy.getMark() * subMarkedThingy.getWeight());
                     weights += subMarkedThingy.getWeight();
-                } else if (subGradable.getClass() == new MarkedThingy().getClass()) {
+                } else if (subGradable.getClass() == new MarkedThingy(0).getClass()) {
                     weightsTimesMarksSum += subGradable.getMark();
                     weights++;
                 }
