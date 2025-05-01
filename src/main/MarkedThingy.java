@@ -1,4 +1,5 @@
-﻿import java.util.Collection;
+﻿import java.util.Collections;
+import java.util.List;
 import java.util.ArrayList;
 
 public class MarkedThingy implements Gradable {
@@ -22,7 +23,7 @@ public class MarkedThingy implements Gradable {
     public double getWeight() {
         return this.weight;
     }
-        
+
     public boolean setDropXLowest(int x) {
         this.dropXLowest = x;
         return true;
@@ -31,13 +32,22 @@ public class MarkedThingy implements Gradable {
     public int getDropXLowest() {
         return this.dropXLowest;
     }
-    
+
     public double getMark() {
-        Collection<Gradable> subGradables = getSubGradables();
+        List<Gradable> subGradables = getSubGradables();
         double weightsTimesMarksSum = 0;
         double weights = 0;
+        List<Gradable> markingGradables = new ArrayList<Gradable>();
+
         for (Gradable subGradable : subGradables) {
             if (subGradable.getMark() >= 0) {
+                markingGradables.add(subGradable);
+            }
+        }
+
+        markingGradables.sort((a, b) -> Double.compare(a.getMark(), b.getMark()));
+
+        for (Gradable subGradable : markingGradables) {            
                 if (subGradable.getClass() == new MarkedThingy(0).getClass()) {
                     MarkedThingy subMarkedThingy = (MarkedThingy) subGradable;
                     weightsTimesMarksSum += (subMarkedThingy.getMark() * subMarkedThingy.getWeight());
@@ -45,7 +55,6 @@ public class MarkedThingy implements Gradable {
                 } else if (subGradable.getClass() == new MarkedThingy(0).getClass()) {
                     weightsTimesMarksSum += subGradable.getMark();
                     weights++;
-                }
             }            
         }
         if (weights != 0) {
@@ -63,7 +72,7 @@ public class MarkedThingy implements Gradable {
         subGradables.remove(subGradable);
     }
 
-    public Collection<Gradable> getSubGradables() {
+    public List<Gradable> getSubGradables() {
         return new ArrayList<Gradable>();
     }
 }
