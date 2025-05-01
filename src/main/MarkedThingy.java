@@ -2,14 +2,16 @@
 import java.util.ArrayList;
 
 public class MarkedThingy implements Gradable {
-    private Collection<Gradable> subGradables;
+    private ArrayList<Gradable> subGradables;
+    private int dropXLowest;
     private double weight;
+    private double grade;
 
     public MarkedThingy(int dropXLowestp) {
-        private int dropXLowest;
-        private double weight = -1;
-        private double grade = getMark();
-        private ArrayList<Gradable>() subGradables = new ArrayList<Gradable>;
+        dropXLowest = dropXLowestp;
+        weight = -1;
+        grade = getMark();
+        subGradables = new ArrayList<Gradable>();
     }
 
     public boolean setWeight(double w) {
