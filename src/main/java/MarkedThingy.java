@@ -39,53 +39,6 @@ public class MarkedThingy implements Gradable {
     public int getDropXLowest() {
         return dropXLowest;
     }
-    
-    // public double getMark() {
-        // Collection<Gradable> subGradables = getSubGradables();
-        // double weightsTimesMarksSum = 0;
-        // double weights = 0;
-        // subGradable.filter( (a,b) -> {return a.getMark() > b.getMark()} )
-        // subGradable.sort( (a,b) -> {return a.getMark() > b.getMark()} )
-
-        // for (Gradable subGradable : subGradables) {
-        //     if (subGradable.getMark() >= 0) {
-        //         if (subGradable.getClass() == new MarkedThingy(0).getClass()) {
-        //             MarkedThingy subMarkedThingy = (MarkedThingy) subGradable;
-        //             weightsTimesMarksSum += (subMarkedThingy.getMark() * subMarkedThingy.getWeight());
-        //             weights += subMarkedThingy.getWeight();
-        //         } else if (subGradable.getClass() == new MarkedThingy(0).getClass()) {
-        //             weightsTimesMarksSum += subGradable.getMark();
-        //             weights++;
-        //         }
-        //     }            
-        // }
-        // if (weights != 0) {
-        //     return weightsTimesMarksSum/weights;
-        // } else {
-        //     return -1;
-        // }
-        // return -1;
-    // }
-
-    // public double getMark() {
-
-    //     Stream<Gradable> subGradable = getSubGradables().stream().filter(e -> e.getMark() == -1);
-        
-    //     if(subGradable.skip(dropXLowest).count() < 1) return -1;            
-
-    //     subGradable.sorted(((a, b) -> Double.compare(a.getMark(), b.getMark())));
-
-    //     double totalWeight = subGradable.skip(dropXLowest).mapToDouble(e -> getWeight()).sum();
-
-    //     double mark = subGradable
-    //         .skip(dropXLowest)
-    //         .mapToDouble(e -> e.getMark() * e.getWeight())
-    //         .sum();
-
-    //     return mark/totalWeight;
-
-    // }
-
 
     public double getMark() {
 
