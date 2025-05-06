@@ -123,5 +123,4 @@ public class MarkedThingy implements Gradable {
     public Collection<Gradable> getSubGradables() {
         return subGradables;
     }
-
 }

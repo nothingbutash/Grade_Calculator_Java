@@ -9,8 +9,9 @@
         return 1;
     }
 
-    public void setMark(double mark) {
+    public boolean setMark(double mark) {
         this.mark = mark;
+        return true;
     }
 
     public double getMark() {
